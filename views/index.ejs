@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Anonymous+Pro" />
+    <link rel="stylesheet" href="/style.css">
+    <title>youty Youtube To MP3</title>
+  </head>
+  <body>
+    <div class="content-wrap">
+    <div class="top-container">
+      <div class="home"><a href="">YouTube to MP3 Downloader</a></div>
+      <form action="/youty-mp3" method="POST" id="form">
+        <div class="input">
+          <i class="fa-brands fa-youtube"></i><input type="text" name="videoID" placeholder="YouTube Video URL" id="urlinput"><button id="convert-btn">START</button>
+        </div>
+      </form>
+    </div>
+
+    <center>
+    <div class="bottom-container">
+      <% if (typeof success != "undefined" && success) { %>
+        <div class="success">
+          <p><%= song_title %></p>
+          <a href="<%= song_link %>"><button id="download-btn"><i class="fa-solid fa-floppy-disk"></i>DOWNLOAD</button></a>
+        </div>
+      <% } else if (typeof success != "undefined" && !success) { %>
+        <div class="errors">
+          <p><%= message %></p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  </center>
+  <div class="footer">
+    <p>abumanga project &#169; copyrights reserved 2022</p>
+  </div>
+  </body>
+</html>

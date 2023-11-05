@@ -1,0 +1,121 @@
+* {
+  font-family: "Anonymous Pro";
+}
+
+body {
+  background: #29303a;
+  color: #E6C462;
+  background-image: url("/youtybg-hd.jpg");
+  background-position: center;
+  background-size: 125%;
+}
+
+.content-wrap {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)) ;
+  background-position: center;
+}
+
+.home a {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 25px;
+  color: ghostwhite;
+}
+
+.home a:hover {
+  color: wheat;
+}
+
+.home {
+  padding: 15px;
+}
+
+.input {
+  border-radius: 65px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  padding: 0 0 0 20px;
+  transition: transform .3s;
+}
+
+#urlinput {
+  box-sizing: border-box;
+  font-size: 20px;
+  width: 40vw;
+  padding: 15px;
+  border: none;
+  outline: 0;
+}
+
+.input:hover {
+  transform: scale(1.05);
+}
+
+#convert-btn {
+  font-size: 20px;
+  padding: 15px;
+  color: #E6C462;
+  font-weight: bold;
+  border-top-right-radius: 65px;
+  border-bottom-right-radius: 65px;
+  transition: background-color .5s, transform .5s;
+}
+
+#convert-btn:hover {
+  color: white;
+  background-color: #E6C462;
+  transform: scale(1.08);
+}
+
+#download-btn {
+  border-radius: 65px;
+  padding: 15px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  transition: .3s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#download-btn:hover {
+  transform: scale(1.2);
+  background-color: #00A36C;
+}
+
+.fa-floppy-disk {
+  padding-right: 8px;
+}
+
+.fa-youtube {
+  transform: scale(1.3);
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.top-container {
+  width: 100%;
+  margin-top: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-container {
+  color: ghostwhite;
+  padding-bottom: 0.5rem;
+}
+
+.footer {
+  width: 100%;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  font-size: 11px;
+  color: grey;
+  text-align: center;
+}
