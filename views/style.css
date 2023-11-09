@@ -5,9 +5,23 @@
 body {
   background: #29303a;
   color: #E6C462;
-  background-image: url("/youtybg-hd.jpg");
-  background-position: center;
-  background-size: 125%;
+  background-image: url("portrait.jpg");
+  background-position: 0 0;
+  background-size: 100%;
+}
+
+@media (min-width:801px)  { 
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  body {
+    background-image: url("landscape.jpg");
+  }
+}
+
+@media (min-width:1025px) { 
+  /* big landscape tablets, laptops, and desktops */ 
+  body {
+    background-image: url("landscape.jpg");
+  }
 }
 
 .content-wrap {
