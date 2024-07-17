@@ -48,8 +48,8 @@ body {
 
 #urlinput {
   box-sizing: border-box;
-  font-size: 20px;
-  width: 40vw;
+  font-size: 1em;
+  min-width: 20rem;
   padding: 1rem;
   border: 0;
   outline: 0;
