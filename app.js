@@ -1,12 +1,12 @@
 // required packages
 
-const express = require("express");
-const fetch = require("node-fetch");
-require("dotenv").config();
+const express = require("express")
+const axios = require('axios')
+require("dotenv").config()
 
 // creating the express server
 
-const app = express();
+const app = express()
 
 // server port number
 
@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   res.render("index")
 })
 
-app.post("/youty-mp3", async (req, res) => {
+app.post("/youty", async (req, res) => {
   const videoIdx = req.body.videoID;
   const videoId = videoIdx.slice(videoIdx.length - 11, videoIdx.length);
   if (
@@ -36,22 +36,26 @@ app.post("/youty-mp3", async (req, res) => {
     videoId === "" ||
     videoId === null
   ) {
-    return res.render("index", {success : false, message : "Enter a valid video URL"});
+    console.log('Invalid url')
+    return res.render("index", { success: false, message: "Enter a valid video URL" });
   } else {
-      const fetchAPI = await fetch(`https://youtube-mp3-download1.p.rapidapi.com/dl?id=${videoId}`, {
-        "method" : "GET",
-        "headers": {
-          "x-rapidapi-key" : process.env.API_KEY,
-          "x-rapidapi-host" : process.env.API_HOST
-        }
-      });
+    const fetchAPI = await axios.request(`https://youtube-mp36.p.rapidapi.com/dl?id=${videoId}`, {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": process.env.API_KEY,
+        "x-rapidapi-host": process.env.API_HOST
+      }
+    });
+    const fetchResponse = await fetchAPI.data;
 
-      const fetchResponse = await fetchAPI.json();
-
-      if (fetchResponse.status === "ok")
-        return res.render("index", {success : true,song_title: fetchResponse.title, song_link : fetchResponse.link});
-      else
-        return res.render("index", {success : false, message : fetchResponse.msg})
+    if (fetchResponse.msg === "success") {
+      console.log('Success')
+      return res.render("index", { success: true, song_title: fetchResponse.title, song_link: fetchResponse.link })
+    }
+    else {
+      console.log('Failed')
+      return res.render("index", { success: false, message: fetchResponse.msg })
+    }
   }
 })
 

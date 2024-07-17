@@ -1,32 +1,23 @@
 * {
-  font-family: "Anonymous Pro";
+  font-family: "Anonymous Pro", monospace;
 }
 
 body {
-  background: #29303a;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(0deg, #12121e, #29303a);
   color: #E6C462;
-  background-image: url("portrait.jpg");
-  background-position: 0 0;
-  background-size: 100%;
-}
-
-@media (min-width:801px)  { 
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-  body {
-    background-image: url("landscape.jpg");
-  }
-}
-
-@media (min-width:1025px) { 
-  /* big landscape tablets, laptops, and desktops */ 
-  body {
-    background-image: url("landscape.jpg");
-  }
 }
 
 .content-wrap {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)) ;
-  background-position: center;
+  width: fit-content;
+  padding: 3rem;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, #12121e44, #31313a99);
+  backdrop-filter: blur(6px);
 }
 
 .home a {
@@ -40,60 +31,57 @@ body {
   color: wheat;
 }
 
-.home {
-  padding: 15px;
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 65px;
+  margin-top: 1rem;
+  background-color: white;
+  box-shadow: 0 0 1px 1px #E6C462;
 }
 
-.input {
-  border-radius: 65px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: white;
-  padding: 0 0 0 20px;
-  transition: transform .3s;
+.input>p {
+  padding: 0 1rem;
 }
 
 #urlinput {
   box-sizing: border-box;
   font-size: 20px;
   width: 40vw;
-  padding: 15px;
-  border: none;
+  padding: 1rem;
+  border: 0;
   outline: 0;
-}
-
-.input:hover {
-  transform: scale(1.01);
 }
 
 #convert-btn {
   font-size: 20px;
-  padding: 15px;
+  padding: 1rem;
   color: #E6C462;
+  background-color: #12121e;
   font-weight: bold;
   border-top-right-radius: 65px;
   border-bottom-right-radius: 65px;
-  transition: background-color .5s, transform .5s;
 }
 
 #convert-btn:hover {
   color: white;
   background-color: #E6C462;
-  transform: scale(1.01);
 }
 
 #download-btn {
-  border-radius: 65px;
+  border-radius: 10px;
   padding: 15px;
-  background-color: red;
+  background-image: linear-gradient(90deg, #cd5c5c, #ff7f50);
   color: white;
+  font-size: 1.2em;
   font-weight: bold;
-  transition: .3s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #download-btn:hover {
   transform: scale(1.01);
-  background-color: #00A36C;
+  background-image: linear-gradient(90deg, #00A36C, #00ff7f);
 }
 
 .fa-floppy-disk {
@@ -112,7 +100,6 @@ button {
 
 .top-container {
   width: 100%;
-  margin-top: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,7 +116,7 @@ button {
   display: block;
   position: fixed;
   bottom: 0;
-  font-size: 11px;
-  color: grey;
+  font-size: small;
+  color: #808080;
   text-align: center;
 }
