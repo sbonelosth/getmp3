@@ -6,7 +6,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
@@ -17,9 +16,7 @@ body {
 .content-wrap {
   width: fit-content;
   padding: 3rem;
-  border-radius: 20px;
-  background-image: linear-gradient(to bottom, #12121e44, #31313a99);
-  backdrop-filter: blur(6px);
+  margin-top: 10rem;
 }
 
 .home a {
@@ -51,8 +48,7 @@ body {
 #urlinput {
   box-sizing: border-box;
   font-size: 1em;
-  max-width: 20rem;
-  min-width: 10rem;
+  width: 12rem;
   padding: 1rem;
   border: 0;
   outline: 0;
