@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 3000;
 
 // setting template engine
 
-app.set("view engine", "ejs");
-app.use(express.static("views"));
+app.set("view engine", "ejs")
+app.use(express.static("views"))
 
 // required for parsing html data for POST request
 
@@ -28,16 +28,17 @@ app.get("/", (req, res) => {
   res.render("index")
 })
 
-app.post("/youty", async (req, res) => {
+app.post("/download", async (req, res) => {
   const videoIdx = req.body.videoID;
-  const videoId = videoIdx.slice(videoIdx.length - 11, videoIdx.length);
+  const videoIdMatch = videoIdx.match(/(?:\?v=|\/embed\/|\/watch\?v=)([a-zA-Z0-9_-]{11})/);
+  const videoId = videoIdMatch ? videoIdMatch[1] : null;
   if (
     videoId === undefined ||
     videoId === "" ||
     videoId === null
   ) {
     console.log('Invalid url')
-    return res.render("index", { success: false, message: "Enter a valid video URL" });
+    return res.render("index", { success: false, message: "Enter a valid YouTube URL" })
   } else {
     const fetchAPI = await axios.request(`https://youtube-mp36.p.rapidapi.com/dl?id=${videoId}`, {
       "method": "GET",
@@ -62,5 +63,5 @@ app.post("/youty", async (req, res) => {
 // starting the server
 
 app.listen(PORT, () => {
-  console.log(`Server strated on port ${PORT}...`);
+  console.log(`Server strated on port ${PORT}...`)
 })

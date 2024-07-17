@@ -43,25 +43,28 @@ body {
 
 .input>p {
   padding: 0 1rem;
+  font-size: large;
+  color: red;
 }
 
 #urlinput {
   box-sizing: border-box;
   font-size: 1em;
   width: 12rem;
-  padding: 1rem;
+  padding: 1rem 0.1rem;
   border: 0;
   outline: 0;
 }
 
 #convert-btn {
-  font-size: 20px;
+  font-size: 23px;
   padding: 1rem;
   color: #E6C462;
   background-color: #12121e;
   font-weight: bold;
   border-top-right-radius: 65px;
   border-bottom-right-radius: 65px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #convert-btn:hover {
