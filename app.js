@@ -30,8 +30,9 @@ app.get("/", (req, res) => {
 
 app.post("/download", async (req, res) => {
   const videoIdx = req.body.videoID;
-  const videoIdMatch = videoIdx.match(/(?:\?v=|\/embed\/|\/watch\?v=)([a-zA-Z0-9_-]{11})/);
-  const videoId = videoIdMatch ? videoIdMatch[1] : null;
+  const videoIdMatch = videoIdx.match(/^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(?:-nocookie)?\.com|youtu.be))(/(?:[\w-]+?v=|embed\/|live\/|v\/)?)([\w-]+)(\S+)?$/);
+  
+  const videoId = videoIdMatch ? videoIdMatch[5] : null;
   if (
     videoId === undefined ||
     videoId === "" ||
