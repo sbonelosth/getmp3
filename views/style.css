@@ -1,5 +1,5 @@
 * {
-  font-family: "Anonymous Pro", monospace;
+  font-family: JetBrains Mono;
 }
 
 body {
@@ -9,7 +9,9 @@ body {
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
-  background-image: linear-gradient(0deg, #12121e, #29303a);
+  background-color: #12121e;
+  background-image: url(doodle.svg);
+  background-size: 3%;
   color: #E6C462;
 }
 
